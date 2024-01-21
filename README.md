@@ -21,7 +21,8 @@ You can enter 1 to N prompts. The prompts should be named as the CLI arguments a
 ### Prompt Structure
 
 Ensure that the prompts are stored in the prompts directory and named the same as the CLI argument. Responses will be stored in the responses directory with filenames like prompt1.json, prompt2.json, etc.
-Response Structure
+
+### Response Structure
 
 The response files have the following structure:
 
@@ -50,6 +51,10 @@ To call this you would enter:
 ```bash
 node prompts.js actions prompt1
 ```
+
+### Model Selection
+
+Currently this is hard coded. To change the model you are using update the `models` array located in prompts.js.
 
 ### Example
 
