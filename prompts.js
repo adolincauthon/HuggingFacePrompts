@@ -12,7 +12,12 @@ const models = [
   'codellama/CodeLlama-34b-Instruct-hf',
 ];
 
-const prompts = process.argv.slice(2);
+const parameterPath = process.argv[2];
+const prompts = process.argv.slice(3);
+
+const parameters = JSON.parse(
+  fs.readFileSync(`promptParameters/${parameterPath}.json`, 'utf-8')
+);
 
 const getInstruction = async (prompt, model, response, promptNumber) => {
   return new Promise(async (resolve, reject) => {
@@ -21,10 +26,7 @@ const getInstruction = async (prompt, model, response, promptNumber) => {
     try {
       const completion = await textGeneration({
         inputs: prompt,
-        parameters: {
-          max_new_tokens: 10,
-          return_full_text: false,
-        },
+        parameters,
         model,
         accessToken,
       });
