@@ -59,7 +59,7 @@ node prompts.js actions prompt1
 This works similar to the prompts command above. The only difference is an additional parameter determining the number of turns the conversation should take. This begins with the first response from the LLM. So if you want to have a conversation with 5 LLM generations, run the following command with the appropriate parameter and prompt options:
 
 ```bash
-node conversation.js conversation 5 conversation1
+node conversation.js conversation 5 conversation_basic
 ```
 
 ### Model Selection
