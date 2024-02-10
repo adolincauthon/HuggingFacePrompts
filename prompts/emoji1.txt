@@ -1,0 +1,32 @@
+<instruct>
+Given the following statement:
+The agent is putting out a fire in their kitchen.
+
+Return only 2 emojis that represent the statement.
+</instruct>
+
+<answer>
+🧯🍳
+<answer/>
+---------------------------------------
+<instruct>
+Given the following statement:
+
+The agent is at work.
+
+Return only 2 emojis that represent the statement.
+</instruct>
+
+<answer>
+👔🖥️
+<answer/>
+---------------------------------------
+<instruct>
+Given the following statement:
+
+The agent is at work.
+
+Return only 2 emojis that represent the statement.
+</instruct>
+
+<answer>

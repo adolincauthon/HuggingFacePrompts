@@ -1,0 +1,43 @@
+<instruct>
+Given the following events:
+- The agent starts work at 8:00AM to 5:00PM
+- The agent dances at night
+- The agent loves to cook
+
+### And the following information:
+- it is 7:50AM
+- the agent is broke
+- the agent is not hungry
+</instruct>
+
+<query>
+#### Where should the agent go based on these options:
+1. Work
+2. The dance club
+3. The kitchen
+</query>
+
+<answer>
+1. Work
+<answer/>
+---------------------------------------
+<instruct>
+Given the following events:
+- The agent starts work at 8:00AM
+- The agent dances at night
+- The agent loves to cook
+
+### And the following information:
+- it is 7:50PM
+- the agent is bored
+- the agent is not hungry
+</instruct>
+
+<query>
+#### Where should the agent go based on these options:
+1. Work
+2. The dance club
+3. The kitchen
+</query>
+
+<answer>

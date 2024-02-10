@@ -1,0 +1,5 @@
+{
+  "min_new_tokens": 50,
+  "return_full_text": false,
+  "use_cache": false
+}

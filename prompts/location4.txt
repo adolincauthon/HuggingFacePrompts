@@ -6,19 +6,20 @@ Given the following events:
 - <important> the kitchen is on fire </important>
 
 ### And the following information:
-
 - it is 7:50AM
 - the agent is broke
 - the agent is not hungry
-- <important> the agent is in the kitchen </important>
-
-<query> 
-What is the agent doing?
-</query>
 </instruct>
 
+<query>
+#### Where should the agent go based on these options:
+1. Work
+2. The dance club
+3. The kitchen
+</query>
+
 <answer>
-The agent is putting out a fire in the kitchen.
+1. The kitchen
 <answer/>
 ---------------------------------------
 <instruct>
@@ -28,19 +29,20 @@ Given the following events:
 - The agent loves to cook
 
 ### And the following information:
-
 - it is 7:50AM
 - the agent is broke
 - the agent is not hungry
-- <important> the agent is at work </important>
-
-<query> 
-What is the agent doing?
-</query>
 </instruct>
 
+<query>
+#### Where should the agent go based on these options:
+1. Work
+2. The dance club
+3. The kitchen
+</query>
+
 <answer>
-The agent is working.
+1. Work
 <answer/>
 ---------------------------------------
 <instruct>
@@ -50,16 +52,18 @@ Given the following events:
 - The agent loves dancing
 
 ### And the following information:
-
 - it is 7:50PM
 - the agent is bored
 - the agent is hungry
-- <important> The agent broke their leg </important>
-- <important> The agent is at the hospital <important>
-<query> 
-What is the agent doing?
-</query>
+- <important> The agent broke their leg <important>
 </instruct>
 
-<answer>
+<query>
+#### Where should the agent go based on these options:
+1. Work
+2. The dance club
+3. The kitchen
+4. The hosptial
+</query>
 
+<answer>

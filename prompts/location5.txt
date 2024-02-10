@@ -1,0 +1,69 @@
+<instruct>
+Given the following information on the agent:
+- The agent starts work at 8:00AM to 5:00PM
+- The agent dances at night
+- The agent loves to cook
+- <important> the kitchen is on fire </important>
+
+### And the state of the world is:
+
+- it is 7:50AM
+- the agent is broke
+- the agent is not hungry
+  </instruct>
+
+<query>
+#### Where should the agent go based on these options:
+1. Work
+2. The dance club
+3. The kitchen
+</query>
+
+<answer>
+1. The kitchen
+<answer/>
+---------------------------------------
+<instruct>top_p work at 8:00AM to 5:00PM
+- The agent dances at night
+- The agent loves to cook
+
+### And the state of the world is:
+
+- it is 7:50AM
+- the agent is broke
+- the agent is not hungry
+  </instruct>
+
+<query>
+#### Where should the agent go based on these options:
+1. Work
+2. The dance club
+3. The kitchen
+</query>
+
+<answer>
+1. Work
+<answer/>
+---------------------------------------
+<instruct>
+Given the following information on the agent:
+- The agent starts work at 8:00AM
+- The agent loves to cook
+- The agent loves dancing
+
+### And the state of the world is:
+
+- it is 7:50PM
+- the agent is tired
+- the agent is hungry
+  </instruct>
+
+<query>
+#### Where should the agent go based on these options:
+1. Work
+2. The dance club
+3. The kitchen
+4. The hosptial
+</query>
+
+<answer>

@@ -8,7 +8,9 @@ To install the required dependencies run `npm install`
 
 The only additional setup required is to create a top level .env file and set `HF_API_TOKEN` to your huggingface API token.
 
-### How To Run
+### Prompts
+
+#### How To Run
 
 To run the program, use the following command:
 
@@ -18,11 +20,11 @@ node prompts.js parameterName prompt1 prompt2 promptn
 
 You can enter 1 to N prompts. The prompts should be named as the CLI arguments and stored in text files within the prompts directory.
 
-### Prompt Structure
+#### Prompt Structure
 
 Ensure that the prompts are stored in the prompts directory and named the same as the CLI argument. Responses will be stored in the responses directory with filenames like prompt1.json, prompt2.json, etc.
 
-### Response Structure
+#### Response Structure
 
 The response files have the following structure:
 
@@ -35,7 +37,7 @@ The response files have the following structure:
 }
 ```
 
-### Parameters
+#### Parameters
 
 The huggingface API allows you to set different parameters for interacting with their models. Create a JSON file with your desired parameters in the promptParamaters directory. When executing the program enter the name of the file without `.json` For example, in the case of action selection we only want a short response from the model and we do not want the original input text. See below for how to set those parameters:
 
@@ -50,6 +52,14 @@ To call this you would enter:
 
 ```bash
 node prompts.js actions prompt1
+```
+
+#### Conversations
+
+This works similar to the prompts command above. The only difference is an additional parameter determining the number of turns the conversation should take. This begins with the first response from the LLM. So if you want to have a conversation with 5 LLM generations, run the following command with the appropriate parameter and prompt options:
+
+```bash
+node conversation.js conversation 5 conversation1
 ```
 
 ### Model Selection

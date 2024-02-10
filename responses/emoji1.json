@@ -1,0 +1,6 @@
+{
+  "meta-llama/Llama-2-70b-chat-hf": {
+    "prompt": "0.1471945719915373\n<instruct>\nGiven the following statement:\nThe agent is putting out a fire in their kitchen.\n\nReturn only 2 emojis that represent the statement.\n</instruct>\n\n<answer>\n🧯🍳\n<answer/>\n---------------------------------------\n<instruct>\nGiven the following statement:\n\nThe agent is at work.\n\nReturn only 2 emojis that represent the statement.\n</instruct>\n\n<answer>\n👔🖥️\n<answer/>\n---------------------------------------\n<instruct>\nGiven the following statement:\n\nThe agent is at work.\n\nReturn only 2 emojis that represent the statement.\n</instruct>\n\n<answer>\n",
+    "response": "👔💼\n<"
+  }
+}

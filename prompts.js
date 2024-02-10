@@ -5,13 +5,14 @@ dotenv.config();
 
 const accessToken = process.env.HF_API_TOKEN;
 
-const models = [
-  'meta-llama/Llama-2-70b-chat-hf',
-  'HuggingFaceH4/zephyr-7b-beta',
-  'codellama/CodeLlama-13b-hf',
-  'codellama/CodeLlama-34b-Instruct-hf',
-];
+// const models = [
+//   'meta-llama/Llama-2-70b-chat-hf',
+//   'HuggingFaceH4/zephyr-7b-beta',
+//   'codellama/CodeLlama-13b-hf',
+//   'codellama/CodeLlama-34b-Instruct-hf',
+// ];
 
+const models = ['meta-llama/Llama-2-70b-chat-hf'];
 const parameterPath = process.argv[2];
 const prompts = process.argv.slice(3);
 
@@ -22,7 +23,6 @@ const parameters = JSON.parse(
 const getInstruction = async (prompt, model, response, promptNumber) => {
   return new Promise(async (resolve, reject) => {
     const cacheClear = Math.random();
-    prompt = `${cacheClear}\n${prompt}`;
     try {
       const completion = await textGeneration({
         inputs: prompt,
@@ -31,12 +31,11 @@ const getInstruction = async (prompt, model, response, promptNumber) => {
         accessToken,
       });
       console.log(
-        `${model}\n _____________________________\n ${prompt} \n result: ${completion.generated_text}`
+        `${model}\n _____________________________\n ${completion.generated_text}`
       );
       response[model] = {};
-      response[model]['promptNumber'] = {};
-      response[model]['promptNumber']['prompt'] = prompt;
-      response[model]['promptNumber']['response'] = completion.generated_text;
+      response[model]['prompt'] = prompt;
+      response[model]['response'] = completion.generated_text;
       resolve(completion.generated_text);
     } catch (e) {
       reject(e);
@@ -50,7 +49,7 @@ const getResponses = async (prompt, models, response, promptNumber) => {
       await getInstruction(prompt, model, response, promptNumber);
     })
   );
-  console.log(response);
+  console.log(models);
 };
 
 const processPrompt = async (promptNumber) => {
@@ -64,7 +63,7 @@ const processPrompt = async (promptNumber) => {
       await getResponses(currentPrompt, models, response, promptNumber);
       fs.writeFileSync(
         `./responses/${promptNumber}.json`,
-        JSON.stringify(response)
+        JSON.stringify(response, null, 2)
       );
       resolve(true);
     } catch (e) {

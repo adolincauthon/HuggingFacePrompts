@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Your Program",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/prompts.js",
+      "args": [
+        "emoji",
+        "emoji1"
+        // Add more prompts as needed
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
